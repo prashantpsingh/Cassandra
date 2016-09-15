@@ -1,0 +1,16 @@
+cass:
+  tty: true
+  restart: always
+  ports:
+  - 9042:9042/tcp
+  - 9160:9160/tcp
+  hostname: cass1
+  labels: 
+    io.rancher.container.dns: true
+    io.rancher.scheduler.affinity:container_label_soft_ne: io.rancher.stack_service.name=$${stack_name}/$${service_name}
+    io.rancher.container.hostname_override: container_name
+  environment:
+    RANCHER_ENABLE: 'true'
+    CASSANDRA_ENDPOINT_SNITCH: GossipingPropertyFileSnitch
+    RANCHER_SEED_SERVICE: CassandraSeed
+  image: 035824440926.dkr.ecr.us-east-1.amazonaws.com/nrt/cassandra-2.0

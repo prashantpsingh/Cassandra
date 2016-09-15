@@ -1,0 +1,7 @@
+name: Cassandra Cluster
+description: |
+  Cassandra cluster
+version: Cassandra-2.0
+category: Clustering
+maintainer: "Pawan Kumar <monu.pawan@gmail.com>"
+minimum_rancher_version: v0.59.0
