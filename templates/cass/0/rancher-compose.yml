@@ -19,6 +19,12 @@
       required: true
       default: 3
       type: "int"
+    - variable: "jvmmem"
+      description: "JVM Memory in Kb"
+      label: "JVM Memory:"
+      required: true
+      default: 256
+      type: "string"
 Seed:
   scale: ${seed_scale}
 Peer:
