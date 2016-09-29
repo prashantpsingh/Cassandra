@@ -16,7 +16,7 @@ Seed:
     CASSANDRA_ENDPOINT_SNITCH: GossipingPropertyFileSnitch
     JVMMEM: ${jvmmem}
   image: 035824440926.dkr.ecr.us-east-1.amazonaws.com/nrt/cassandra
-  command: bash /usr/local/apache-cassandra-2.2.4/bin/start-cassandra.sh seed Seed ${seed_scale}
+  command: bash /usr/local/apache-cassandra-2.2.4/bin/start-cass-service.sh.sh seed Seed ${seed_scale}
 Peer:
   tty: true
   restart: always
@@ -34,4 +34,4 @@ Peer:
     CASSANDRA_ENDPOINT_SNITCH: GossipingPropertyFileSnitch
     JVMMEM: ${jvmmem}
   image: 035824440926.dkr.ecr.us-east-1.amazonaws.com/nrt/cassandra
-  command: bash /usr/local/apache-cassandra-2.2.4/bin/start-cassandra.sh peer Seed ${seed_scale}
+  command: bash /usr/local/apache-cassandra-2.2.4/bin/start-cass-service.sh peer Seed ${seed_scale}
