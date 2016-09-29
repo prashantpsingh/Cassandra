@@ -35,3 +35,5 @@ Peer:
     JVMMEM: ${jvmmem}
   image: 035824440926.dkr.ecr.us-east-1.amazonaws.com/nrt/cassandra
   command: bash /usr/local/apache-cassandra-2.2.4/bin/start-cass-service.sh peer Seed ${seed_scale}
+  links: 
+   - Seed:Seed
